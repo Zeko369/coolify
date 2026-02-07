@@ -41,6 +41,8 @@ jobs:
           file: docker/production/Dockerfile
           platforms: linux/amd64
           push: true
+          build-args: |
+            POSTGRES_VERSION=16
           tags: |
             ${{ steps.meta.outputs.IMAGE }}:${{ steps.version.outputs.VERSION }}
             ${{ steps.meta.outputs.IMAGE }}:latest
