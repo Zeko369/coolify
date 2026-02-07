@@ -2826,8 +2826,9 @@ function generate_fluentd_configuration(): array
             'fluentd-address' => 'tcp://127.0.0.1:24224',
             'fluentd-async' => 'true',
             'fluentd-sub-second-precision' => 'true',
-            // env vars are used in the LogDrain configurations
-            'env' => 'COOLIFY_APP_NAME,COOLIFY_PROJECT_NAME,COOLIFY_SERVER_IP,COOLIFY_ENVIRONMENT_NAME',
+            // labels and env vars are used in the LogDrain configurations
+            'labels' => 'coolify.resourceName,coolify.projectName,coolify.environmentName,coolify.serviceName,coolify.type',
+            'env' => 'SOURCE_COMMIT,COOLIFY_BRANCH',
         ],
     ];
 }
